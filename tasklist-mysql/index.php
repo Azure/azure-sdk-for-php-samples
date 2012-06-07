@@ -92,7 +92,7 @@
 				<td><input name="itemcategory" type="textbox"/></td>
 			</tr>
 			<tr>
-				<td>Item Date: </td>
+				<td>Item Date (yyyy-mm-dd): </td>
 				<td><input name="itemdate" type="textbox"/></td>
 			</tr>
 		</table>
