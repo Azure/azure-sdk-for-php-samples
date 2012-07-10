@@ -1,0 +1,16 @@
+IMPORTANT STEPS BEFORE USING THIS SAMPLE:
+
+In order to use this example correctly, you will need to built the PowerShell DLL to provide the correct 
+loading of the Microsoft.Samples.Waad.PS link as referred to in the documentation. 
+
+The source for this DLL is included under: %ROOT%/csharp/code/libraries/powershell/Microsoft.Samples.Waad.PS
+
+You may either load this in to Visual Studio 2008 / 2010 and build, or you may use the included script as follows:
+
+%ROOT%/csharp/code/libraries/powershell/Microsoft.Samples.Waad.PS/buildWaadPS.bat
+
+It's a simple MSBuild script that will run the default MSBuild with DEBUG configuration and copy the correct .dll in to the \php\
+scripts\ directory
+
+Enjoy! 
+
