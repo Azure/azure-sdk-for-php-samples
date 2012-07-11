@@ -1,4 +1,4 @@
-
+﻿
 PRE-REQUISITES BEFORE USING THIS SAMPLE
 
 *************************************************
@@ -31,3 +31,29 @@ This is located under %ROOT%/csharp/code/libraries/powershell/Microsoft.Samples.
 The rest of the setup instructions and walk-through are located at:
 
 http://www.windowsazure.com/en-us/develop/php/how-to-guides/web-sso/
+
+
+********************************************************************
+
+STEP 2: Download the simpleSAMLphp library
+
+********************************************************************
+
+ SimpleSAMLphp is an award-winning application written in native PHP that deals with authentication. The project is led by UNINETT, has a large user base, a helpful user community and a large set of external contributors.
+
+SimpleSAMLphp is having a main focus on providing support for:
+ •SAML 2.0 as a Service Provider.
+ •SAML 2.0 as a Identity Provider.
+ 
+But also supports some other identity protocols, such as Shibboleth 1.3, A-Select, CAS, OpenID, WS-Federation and OAuth.
+
+You can download this by going to: http://simplesamlphp.org/
+
+and including the base install underneath the root directory such as:
+
+%ROOT/simplesamlphp
+
+
+
+Enjoy! 
+
