@@ -48,9 +48,9 @@ Import-Module MSOnlineExtended
 " "
 "--------------- Symmetric Key ---------------------"
 ""
-"Using a symmetric key to idenify you to Azure Active Directory. This is currently a default key for Demo purposes. You can change it in the PowerShell script."
+"Using a symmetric key to idenify you to Azure Active Directory. This is currently a default key for Demo purposes. You can change it in the PowerShell script and alter the demo application to dymanically query from database."
 " "
-$credValue = "0guCAQnwLuTtpa+jWkam1Y/gcGsRzEOOOA2+Illt5bQ="
+$credValue = "FStnXT1QON84B5o38aEmFdlNhEnYtzJ91Gg/JH/Jxiw="
 $credType = "Symmetric"
 
 # replyURL is used to for configuring webSSO
