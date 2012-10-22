@@ -54,7 +54,7 @@
                     idpIdentifier = new Guid(entityDescriptor.Split('@')[1]);
                 }
 
-                return new GetOrgIdSpnResult(new Guid(this.AppPrincipalId), this.ApplicationDomain, idpIdentifier, entityDescriptor);
+                return new GetOrgIdSpnResult(new Guid(this.AppPrincipalId), this.ApplicationDomain, idpIdentifier);
             }
         }
     }
