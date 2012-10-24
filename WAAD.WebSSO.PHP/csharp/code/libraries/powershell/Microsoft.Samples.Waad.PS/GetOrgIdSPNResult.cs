@@ -7,11 +7,11 @@
     {
         private const string Display = "<issuer name=\"{0}\" displayName=\"{0}\" realm=\"{1}\" />";
 
-        public GetOrgIdSpnResult(Guid appId, string appDomain, Guid idpId, string entityId)
+        public GetOrgIdSpnResult(Guid appId, string appDomain, Guid idpId)
         {
             this.ApplicationId = appId;
             this.ApplicationDomain = appDomain;
-            this.Spn = string.Format("spn:{0}@{1}", appId, idpId);
+            this.Spn = string.Format("spn:{0}", appId);
         }
 
         public Guid ApplicationId { get; internal set; }
