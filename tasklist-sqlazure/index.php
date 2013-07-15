@@ -1,6 +1,6 @@
 <html>
 <!--
-/** * Copyright 2012 Microsoft Corporation 
+/** * Copyright 2013 Microsoft Corporation 
 	*  
 	* Licensed under the Apache License, Version 2.0 (the "License"); 
 	* you may not use this file except in compliance with the License. 
@@ -18,11 +18,11 @@
 	<title>My ToDo List</title>
 	<style type="text/css">
 	body { background-color: #fff; border-top: solid 10px #000;
-		color: #333; font-size: .85em; margin: 20; padding: 20;
+		color: #333; font-size: .85em; margin: 20px; padding: 20px;
 		font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
 	}
 
-	h1, h2, h3,{ color: #000; margin-bottom: 0; padding-bottom: 0; }
+	h1, h2, h3 { color: #000; margin-bottom: 0; padding-bottom: 0; }
 
 	h1 { font-size: 2em; }
 
@@ -32,7 +32,7 @@
 
 	table { margin-top: 0.75em;}
 
-	th { font-size: 1.2em; text-align: center; border: none 0px; padding-right: 15; }
+	th { font-size: 1.2em; text-align: center; border: none 0px; padding-right: 15px; }
 
 	td { padding: 0.25em 2em 0.25em 0em; border: 0 none; }
 	</style>
@@ -85,15 +85,15 @@
 		<table border="1">
 			<tr>
 				<td>Item Name: </td>
-				<td><input name="itemname" type="textbox"/></td>
+				<td><input name="itemname" type="text"/></td>
 			</tr>
 			<tr>
 				<td>Item Category: </td>
-				<td><input name="itemcategory" type="textbox"/></td>
+				<td><input name="itemcategory" type="text"/></td>
 			</tr>
 			<tr>
 				<td>Item Date (yyyy-mm-dd): </td>
-				<td><input name="itemdate" type="textbox"/></td>
+				<td><input name="itemdate" type="text"/></td>
 			</tr>
 		</table>
 		<input type="submit" value="Add item"/>
