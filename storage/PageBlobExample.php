@@ -17,14 +17,11 @@
 require_once 'WindowsAzure\WindowsAzure.php';
 
 use WindowsAzure\Common\ServicesBuilder;
+use WindowsAzure\Common\CloudConfigurationManager;
 use WindowsAzure\Blob\Models\ListContainersOptions;
 use WindowsAzure\Blob\Models\CreateBlobPagesOptions;
 use WindowsAzure\Blob\Models\PageRange;
 use WindowsAzure\Common\ServiceException;
-
-define("ACCOUNTNAME", "your_storage_account_name");
-define("ACCOUNTKEY", "your_storage_account_key");
-
 
 define("CONTAINERNAME", "mycontainer");
 define("PAGEBLOBNAME", "mypageblob");
@@ -157,8 +154,54 @@ function waitForEnterKey()
 
 try 
 {
-    $ConnectionString="DefaultEndpointsProtocol=http;AccountName=" . ACCOUNTNAME . ";AccountKey=" . ACCOUNTKEY;
-    $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($ConnectionString);
+    echo "Beginning processing.\n";
+  
+    /* 
+        Use CloudConfigurationManager::getConnectionString to retrieve 
+        the connection string whose name (in this example) is 
+        "StorageConnectionString".
+        
+        By default, the CloudConfigurationManager::getConnectionString method
+        will look for an environment variable with the name that is passed in
+        as the method parameter, and then assign the environment variable's 
+        value as the return value.
+        
+        For example, if you want to use the storage emulator, start
+        the storage emulator, set an environment variable through a technique 
+        such as 
+        
+            set StorageConnectionString=UseDevelopmentStorage=true
+            
+        and then run this sample at a command prompt that has the 
+        StorageConnectionString as an active environment variable.
+
+        If you want to use a production storage account, set the 
+        environment variable through a technique such as
+        
+            set StorageConnectionString=DefaultEndpointsProtocol=http;AccountName=your_account_name;AccountKey=your_account_key
+            
+        (Substitute your storage account name and account key for 
+        your_account_name and your_account_key, respectively.) 
+        Then run this sample at a command prompt that has the 
+        StorageConnectionString as an active environment variable.
+
+        The format for the storage connection string itself is documented at        
+        http://msdn.microsoft.com/en-us/library/windowsazure/ee758697.aspx
+
+        If you do not want to use an environment variable as the source
+        for the connection string name, you can register other sources 
+        via the CloudCofigurationManager::registerSource method.
+        
+    */
+    $connectionString = CloudConfigurationManager::getConnectionString("StorageConnectionString");
+    
+    if (null == $connectionString || "" == $connectionString)
+    {
+        echo "Did not find a connection string whose name is 'StorageConnectionString'.";
+        exit();
+    }
+   
+    $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
     createContainerIfNotExists($blobRestProxy);
 
