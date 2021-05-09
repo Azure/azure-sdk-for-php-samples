@@ -125,7 +125,7 @@ try {
     $counter = 1;
     $blockIds = array();
 
-    while (!feof($handle))
+    while ($data = fread($handle, BLOCKSIZE))
     {
         $blockId = str_pad($counter, PADLENGTH, "0", STR_PAD_LEFT);
         echo "Processing block $blockId.\n";
@@ -134,8 +134,6 @@ try {
         $block->setBlockId(base64_encode($blockId));
         $block->setType("Uncommitted");
         array_push($blockIds, $block);
-        
-        $data = fread($handle, BLOCKSIZE);
         
         // Upload the block.
         $blobRestProxy->createBlobBlock(CONTAINERNAME, BLOCKBLOBNAME, base64_encode($blockId), $data);
